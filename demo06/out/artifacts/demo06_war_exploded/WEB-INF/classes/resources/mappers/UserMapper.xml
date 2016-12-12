@@ -13,4 +13,12 @@
 	<select id="getUser" resultType="User" parameterType="java.lang.String">
 		select * from user where name=#{name}
 	</select>
-</mapper>  
+
+
+	<!--更改用户-->
+	<!--<update id="updateUser" parameterType="User">-->
+		<!--UPDATE  `user` SET `name`= #{name} , `age`=#{age} WHERE `id`=#{id};-->
+	<!--</update>-->
+
+
+</mapper>

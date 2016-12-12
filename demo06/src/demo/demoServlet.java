@@ -1,6 +1,6 @@
 package demo;
 
-import test.mybatis.TestMyBatis;
+import news.NewsTest;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,16 +23,12 @@ public class demoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         PrintWriter out = response.getWriter();
-
+        response.setContentType("text/html");
         SimpleDateFormat time=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String TimeString = time.format(new java.util.Date());
-        out.println("当前时间："+TimeString);
-
+        out.println("date-time: "+TimeString);
         System.out.println("demoServletstrrt");
-
-        TestMyBatis.getUser();
-
-
+        NewsTest.test();
         System.out.println("demoServletend");
     }
 }

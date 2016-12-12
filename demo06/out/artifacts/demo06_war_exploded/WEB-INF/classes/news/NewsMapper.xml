@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="news.NewsMapper">
+
+
+    <select id="getNewsModel" resultType="news.NewsModel" parameterType="java.lang.String">
+        select * from news where title=#{title}
+    </select>
+
+    <select id="getAllNewsModel" resultType="news.NewsModel">
+        select * from news
+    </select>
+
+    <select id="getCountNewsModel" resultType="int">
+    SELECT count(*)
+    FROM news
+    </select>
+
+    <insert id="addNewsModel"  parameterType="news.NewsModel" >
+        INSERT INTO  `news` (`sort`, `title`, `content`) VALUES (#{sort}, #{title}, #{content})
+        <selectKey keyProperty="id" resultType="int">
+        SELECT max(id) FROM news
+        </selectKey>
+    </insert>
+
+    <update id="updateNewsModel" parameterType="news.NewsModel" >
+     UPDATE `blog`.`news` SET `content`=#{content} WHERE `id`= #{id};
+    </update>
+
+    <delete id="delNewsModel" parameterType="int">
+    DELETE FROM news
+    WHERE id = #{id}
+    </delete>
+
+</mapper>
