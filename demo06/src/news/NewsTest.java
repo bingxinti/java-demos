@@ -5,14 +5,19 @@ package news;
  */
 public class NewsTest {
 
-    public  static void   test()
+    public static void main(String[] args) {
+        test();
+    }
+
+//    ibatis CURD 测试
+    public  static void  test()
     {
-        NewsHandler.test();
+        System.out.println("test-begin");
         NewsHandler.getCountNewsModel();
         NewsHandler.getNewsDetail();
         NewsHandler.getAllNewsModel();
         NewsHandler.addNewsModel();
-        NewsHandler.getCountNewsModel();
         NewsHandler.updateNewsModel();
+        System.out.println("test-end");
     }
 }

@@ -1,6 +1,6 @@
 package demo;
 
-import news.NewsTest;
+import news.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Created by Demon on 16/12/11.
@@ -27,8 +29,26 @@ public class demoServlet extends HttpServlet {
         SimpleDateFormat time=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String TimeString = time.format(new java.util.Date());
         out.println("date-time: "+TimeString);
-        System.out.println("demoServletstrrt");
-        NewsTest.test();
-        System.out.println("demoServletend");
+
+
+//        refreshServlet(request,response);
+        test();
+
+    }
+
+
+
+    public static  void test()
+    {
+//        ibatis CURD 测试
+//        NewsTest.test();
+        JDBCForMysql.main(null);
+
+    }
+
+
+    public   void  refreshServlet(HttpServletRequest request, HttpServletResponse response)
+    {
+
     }
 }
