@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dakun:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="dakun.war">
+      <element id="artifact" artifact-name="dakun:war exploded" />
+    </root>
+  </artifact>
+</component>
